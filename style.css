@@ -122,12 +122,31 @@ nav > ul {
 }
 
 /* make h2 animation */
-#text-animation-1 {
+h2 {
     margin-top: 20px;
     margin-bottom: 15px;
     word-wrap:break-word;
+    
 }
 
+h2::before {
+    content: attr(data-text);
+    color: white;
+    -webkit-text-stroke: 2px white;
+    border-right: 2px solid white;
+    animation: animate 3s linear infinite;
+    position: absolute;
+}
+
+
+@keyframes animate {
+    0%, 100% {
+        width: 0;
+    }
+    90% {
+        width: 100%;
+    }
+}
 
 #hero input[type="email"] {
     max-width: 275px;
